@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<h:head>
+		<title>LojaVirtual</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<div align="center">
+				<h:panelGrid columns="2">
+				
+				<f:facet name="header">
+					<h:outputLabel value="#{msg.novaPessoa}"/>
+				</f:facet>
+				
+					<h:outputLabel value="#{msg.codigo}"/>
+					<h:inputText readonly="true" value="#{pessoaCtrl.pessoa.id}"/>
+				    
+				    <h:outputLabel value="#{msg.nome}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.nome}"/>
+				    
+				    <h:outputLabel value="#{msg.cpf}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.cpf}"/>
+				    
+				    <h:outputLabel value="#{msg.rg}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.rg}"/>
+				    
+				    <h:outputLabel value="#{msg.data}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.data}">
+				    	<f:convertDateTime pattern="dd-MM-yyyy"/>
+				    </h:inputText>
+				    
+				    <h:outputLabel value="#{msg.rua}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.rua}"/>
+				    
+				    <h:outputLabel value="#{msg.bairro}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.bairro}"/>
+				    
+				    <h:outputLabel value="#{msg.cidade}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.cidade}"/>
+				    
+				    <h:outputLabel value="#{msg.uf}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.uf}"/>
+				    
+				    <h:outputLabel value="#{msg.cep}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.cep}"/>
+				    
+				    <h:outputLabel value="#{msg.email}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.email}"/>
+				    
+				    <h:outputLabel value="#{msg.senha}"/>
+				    <h:inputSecret value="#{pessoaCtrl.pessoa.senha}"/>
+				    
+				    <h:outputLabel value="#{msg.tipo}"/>
+				    <h:inputText value="#{pessoaCtrl.pessoa.tipo}"/>
+				    
+				</h:panelGrid>
+				<h:commandButton value="#{msg.listar}" action="lista_pessoa"/>
+				<h:commandButton value="#{msg.gravar}" action="#{pessoaCtrl.actionGravar}"/>
+			</div>
+		</h:form>
+	</h:body>
+</html>

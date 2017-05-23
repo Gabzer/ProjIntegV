@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<title>LojaVirtual</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<div align="center">
+				<h:panelGrid columns="2">
+				<f:facet name="header">
+					<h:outputLabel value="#{msg.novoProduto}"/>
+				</f:facet>
+					<h:outputLabel value="#{msg.codigo}"/>
+					<h:inputText readonly="true" value="#{produtoCtrl.produto.id}"/>
+				    <h:outputLabel value="#{msg.nome}"/>
+				    <h:inputText value="#{produtoCtrl.produto.nome}"/>
+				    <h:outputLabel value="#{msg.preco}"/>
+				    <h:inputText value="#{produtoCtrl.produto.preco}"/>
+				</h:panelGrid>
+				<h:commandButton value="#{msg.listar}" action="lista_produto"/>
+				<h:commandButton value="#{msg.gravar}" action="#{produtoCtrl.actionGravar}"/>
+			</div>
+		</h:form>
+	</h:body>
+</html>

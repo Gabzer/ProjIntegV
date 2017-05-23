@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+		<title>LojaVirtual</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<div align="center">
+			
+				<h:commandLink value="#{msg.novaPessoa}" action="#{pessoaCtrl.actionInserir}"/>
+				<h:commandLink value=" #{msg.home}" action="index"/>
+				
+				<h:dataTable value="#{pessoaCtrl.listagem}" var="p" border="1" style="text-align:center;">
+					<f:facet name="header"><h:outputLabel value="#{msg.listaPessoa}"/></f:facet>
+					<h:column>
+					  	<f:facet name="header"><h:outputLabel value="#{msg.codigo}"/></f:facet>
+					  	<h:outputLabel value="#{p.id}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputLabel value="#{msg.nome}"/></f:facet>
+						<h:outputLabel value="#{p.nome}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputLabel value="#{msg.cpf}"/></f:facet>
+						<h:outputLabel value="#{p.cpf}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputLabel value="#{msg.cidade}"/></f:facet>
+						<h:outputLabel value="#{p.cidade}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputLabel value="#{msg.tipo}"/></f:facet>
+						<h:outputLabel value="#{p.tipo}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputLabel value="#{msg.email}"/></f:facet>
+						<h:outputLabel value="#{p.email}"/>
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputLabel value="#{msg.opcoes}"/>
+						</f:facet>
+						<h:commandLink value="#{msg.alterar}" action="#{pessoaCtrl.actionAlterar(p)}"/> /
+						<h:commandLink value=" #{msg.excluir}" action="#{pessoaCtrl.actionExcluir(p)}"/>
+					</h:column>
+				</h:dataTable>
+			</div>		
+		</h:form>
+	</h:body>
+</html>
